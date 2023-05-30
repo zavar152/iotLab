@@ -1,0 +1,15 @@
+{
+  "name": "mongo source",
+  "config": { 
+    "connector.class": "com.mongodb.kafka.connect.MongoSourceConnector",
+    "publish.full.document.only": "true",
+    "database": "test",
+    "topic.namespace.map": "{\"*\": \"transfer\"}",
+    "output.format.value": "json",
+    "startup.mode":"copy_existing",
+    "connection.uri": "mongodb://root:root@mongo-source:27017",
+    "topic.mapper": "com.mongodb.kafka.connect.source.topic.mapping.DefaultTopicMapper",
+    "collection": "users",
+    "output.format.key": "json"
+  }
+}
